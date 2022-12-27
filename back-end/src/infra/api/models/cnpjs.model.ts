@@ -25,11 +25,11 @@ CNPJS.init({
     allowNull: false,
   },
   createdAt: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATE,
     allowNull: false,
   },
   updatedAt: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATE,
     allowNull: false,
   },
 }, {

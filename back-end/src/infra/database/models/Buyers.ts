@@ -1,6 +1,8 @@
+/* eslint-disable import/no-cycle */
 import { DataTypes, Model } from 'sequelize';
 import connection from '../connection';
 import Cnpj from './Cnpj';
+import Orders from './Orders';
 
 export default class Buyers extends Model {
   id!: number;
@@ -141,4 +143,8 @@ Buyers.init({
   charset: 'latin1',
 });
 
-Buyers.belongsTo(Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });
+Buyers.hasMany(Orders, { foreignKey: 'id', as: 'orders' });
+
+Buyers.belongsTo(Cnpj, {
+  foreignKey: 'cnpjId', as: 'cnpj', onDelete: 'SET NULL', onUpdate: 'CASCADE',
+});

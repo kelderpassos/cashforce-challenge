@@ -1,7 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
 import connection from '../../database/connection';
 
-class Users extends Model {
+export default class Users extends Model {
   id!: number;
   name!: string;
   email!: string;

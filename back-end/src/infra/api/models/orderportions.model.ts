@@ -1,7 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
 import connection from '../../database/connection';
 
-class OrderPortions extends Model {
+export default class OrderPortions extends Model {
   id!: number;
   nDup!: string;
   dVenc!: string;

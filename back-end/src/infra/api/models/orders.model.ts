@@ -1,7 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
 import connection from '../../database/connection';
 
-class Orders extends Model {
+export default class Orders extends Model {
   id!: number;
   orderNfId!: string;
   orderNumber!: string;

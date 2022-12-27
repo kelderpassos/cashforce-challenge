@@ -1,7 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
 import connection from '../../database/connection';
 
-class Sponsors extends Model {
+export default class Sponsors extends Model {
   id!: number;
   name!: string;
   tradingName!: string;

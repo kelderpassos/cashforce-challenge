@@ -1,7 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
 import connection from '../../database/connection';
 
-class CNPJS extends Model {
+export default class CNPJS extends Model {
   id!: number;
   cnpj!: string;
   companyType!: string;

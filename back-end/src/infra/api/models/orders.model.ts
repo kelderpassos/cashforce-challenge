@@ -14,6 +14,8 @@ class Orders extends Model {
   nNf!: string;
   CTE!: string;
   value!: string;
+  createdAt!: Date;
+  updatedAt!: Date;
   cnpjId!: number;
   userId!: number;
   buyerId!: number;
@@ -75,6 +77,14 @@ Orders.init({
   value: {
     type: DataTypes.STRING,
     allowNull: true,
+  },
+  createdAt: {
+    type: DataTypes.DATE,
+    allowNull: false,
+  },
+  updatedAt: {
+    type: DataTypes.DATE,
+    allowNull: false,
   },
   cnpjId: {
     type: DataTypes.INTEGER,

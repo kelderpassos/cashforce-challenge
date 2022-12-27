@@ -1,5 +1,7 @@
+/* eslint-disable import/no-cycle */
 import { DataTypes, Model } from 'sequelize';
 import connection from '../connection';
+import Orders from './Orders';
 
 export default class Users extends Model {
   id!: number;
@@ -69,3 +71,5 @@ Users.init({
   tableName: 'users',
   charset: 'latin1',
 });
+
+Users.hasMany(Orders, { foreignKey: 'id', as: 'orders' });

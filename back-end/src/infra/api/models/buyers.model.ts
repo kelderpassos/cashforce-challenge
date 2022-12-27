@@ -1,5 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 import connection from '../../database/connection';
+import Cnpj from './cnpj.model';
 
 export default class Buyers extends Model {
   id!: number;
@@ -139,3 +140,5 @@ Buyers.init({
   tableName: 'buyers',
   charset: 'latin1',
 });
+
+Buyers.belongsTo(Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });

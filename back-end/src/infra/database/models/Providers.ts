@@ -1,6 +1,8 @@
+/* eslint-disable import/no-cycle */
 import { DataTypes, Model } from 'sequelize';
 import connection from '../connection';
 import Cnpj from './Cnpj';
+import Orders from './Orders';
 
 export default class Providers extends Model {
   id!: number;
@@ -158,4 +160,8 @@ Providers.init(
   },
 );
 
-Providers.belongsTo(Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });
+Providers.hasMany(Orders, { foreignKey: 'id', as: 'orders' });
+
+Providers.belongsTo(Cnpj, {
+  foreignKey: 'cnpjId', as: 'cnpj', onDelete: 'SET NULL', onUpdate: 'CASCADE',
+});

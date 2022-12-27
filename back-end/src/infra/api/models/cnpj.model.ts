@@ -1,7 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
 import connection from '../../database/connection';
 
-export default class CNPJS extends Model {
+export default class Cnpj extends Model {
   id!: number;
   cnpj!: string;
   companyType!: string;
@@ -9,7 +9,7 @@ export default class CNPJS extends Model {
   updatedAt!: Date;
 }
 
-CNPJS.init({
+Cnpj.init({
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,

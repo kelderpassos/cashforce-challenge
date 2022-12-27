@@ -1,5 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
 import connection from '../../database/connection';
+import Orders from './orders.model';
+import Sponsors from './sponsors.model';
 
 export default class Offers extends Model {
   id!: number;
@@ -79,3 +81,6 @@ Offers.init({
   tableName: 'offers',
   charset: 'latin1',
 });
+
+Offers.belongsTo(Orders, { foreignKey: 'orderId', as: 'orders' });
+Offers.belongsTo(Sponsors, { foreignKey: 'sponsorId', as: 'sponsors' });

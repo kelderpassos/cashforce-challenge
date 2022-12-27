@@ -37,4 +37,5 @@ CNPJS.init({
   timestamps: true,
   underscored: false,
   tableName: 'cnpjs',
+  charset: 'latin1',
 });

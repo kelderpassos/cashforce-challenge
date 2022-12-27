@@ -1,5 +1,9 @@
 import { DataTypes, Model } from 'sequelize';
 import connection from '../../database/connection';
+import Buyers from './buyers.model';
+import Cnpj from './cnpj.model';
+import Providers from './providers.model';
+import Users from './users.model';
 
 export default class Orders extends Model {
   id!: number;
@@ -129,3 +133,8 @@ Orders.init({
   tableName: 'orders',
   charset: 'latin1',
 });
+
+Orders.belongsTo(Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });
+Orders.belongsTo(Users, { foreignKey: 'userId', as: 'users' });
+Orders.belongsTo(Buyers, { foreignKey: 'buyerId', as: 'buyers' });
+Orders.belongsTo(Providers, { foreignKey: 'providerId', as: 'providers' });

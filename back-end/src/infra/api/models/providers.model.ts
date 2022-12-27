@@ -1,5 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 import connection from '../../database/connection';
+import Cnpj from './cnpj.model';
 
 export default class Providers extends Model {
   id!: number;
@@ -156,3 +157,5 @@ Providers.init(
     charset: 'latin1',
   },
 );
+
+Providers.belongsTo(Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });

@@ -52,4 +52,6 @@ OrderPortions.init({
   charset: 'latin1',
 });
 
-OrderPortions.belongsTo(Orders, { foreignKey: 'orderId', as: 'orders' });
+OrderPortions.belongsTo(Orders, {
+  foreignKey: 'orderId', as: 'orders', onDelete: 'SET NULL', onUpdate: 'CASCADE',
+});

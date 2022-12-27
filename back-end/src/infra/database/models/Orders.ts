@@ -1,9 +1,9 @@
 import { DataTypes, Model } from 'sequelize';
-import connection from '../../database/connection';
-import Buyers from './buyers.model';
-import Cnpj from './cnpj.model';
-import Providers from './providers.model';
-import Users from './users.model';
+import connection from '../connection';
+import Buyers from './Buyers';
+import Cnpj from './Cnpj';
+import Providers from './Providers';
+import Users from './Users';
 
 export default class Orders extends Model {
   id!: number;

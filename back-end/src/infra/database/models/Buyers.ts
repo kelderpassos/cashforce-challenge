@@ -1,6 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
-import connection from '../../database/connection';
-import Cnpj from './cnpj.model';
+import connection from '../connection';
+import Cnpj from './Cnpj';
 
 export default class Buyers extends Model {
   id!: number;

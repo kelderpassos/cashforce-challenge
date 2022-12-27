@@ -1,7 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
-import connection from '../../database/connection';
-import Orders from './orders.model';
-import Sponsors from './sponsors.model';
+import connection from '../connection';
+import Orders from './Orders';
+import Sponsors from './Sponsors';
 
 export default class Offers extends Model {
   id!: number;

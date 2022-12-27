@@ -1,5 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
-import connection from '../../database/connection';
+import connection from '../connection';
 
 export default class Users extends Model {
   id!: number;

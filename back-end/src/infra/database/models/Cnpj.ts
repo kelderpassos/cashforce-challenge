@@ -1,34 +1,26 @@
 import { DataTypes, Model } from 'sequelize';
-import connection from '../../database/connection';
-import Orders from './orders.model';
+import connection from '../connection';
 
-export default class OrderPortions extends Model {
+export default class Cnpj extends Model {
   id!: number;
-  nDup!: string;
-  dVenc!: string;
-  vDup!: string;
-  availableToMarket!: number;
+  cnpj!: string;
+  companyType!: string;
   createdAt!: Date;
   updatedAt!: Date;
-  orderId!: number;
 }
 
-OrderPortions.init({
+Cnpj.init({
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     allowNull: false,
     autoIncrement: true,
   },
-  nDup: {
+  cnpj: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  dVenc: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  vDup: {
+  companyType: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -40,16 +32,10 @@ OrderPortions.init({
     type: DataTypes.DATE,
     allowNull: false,
   },
-  orderId: {
-    type: DataTypes.INTEGER,
-    allowNull: true,
-  },
 }, {
   sequelize: connection,
   timestamps: true,
   underscored: false,
-  tableName: 'orderportions',
+  tableName: 'cnpjs',
   charset: 'latin1',
 });
-
-OrderPortions.belongsTo(Orders, { foreignKey: 'orderId', as: 'orders' });

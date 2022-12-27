@@ -1,8 +1,8 @@
 import { DataTypes, Model } from 'sequelize';
-import connection from '../../database/connection';
-import Cnpj from './cnpj.model';
+import connection from '../connection';
+import Cnpj from './Cnpj';
 
-export default class Sponsors extends Model {
+export default class Providers extends Model {
   id!: number;
   name!: string;
   tradingName!: string;
@@ -32,7 +32,7 @@ export default class Sponsors extends Model {
   email!: string;
 }
 
-Sponsors.init(
+Providers.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -153,9 +153,9 @@ Sponsors.init(
     sequelize: connection,
     timestamps: true,
     underscored: false,
-    tableName: 'sponsors',
+    tableName: 'providers',
     charset: 'latin1',
   },
 );
 
-Sponsors.belongsTo(Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });
+Providers.belongsTo(Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });

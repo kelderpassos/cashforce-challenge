@@ -1,7 +1,9 @@
+/* eslint-disable import/no-cycle */
 import { DataTypes, Model } from 'sequelize';
 import connection from '../connection';
 import Buyers from './Buyers';
 import Cnpj from './Cnpj';
+import Offers from './Offers';
 import Providers from './Providers';
 import Users from './Users';
 
@@ -134,7 +136,17 @@ Orders.init({
   charset: 'latin1',
 });
 
-Orders.belongsTo(Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });
-Orders.belongsTo(Users, { foreignKey: 'userId', as: 'users' });
-Orders.belongsTo(Buyers, { foreignKey: 'buyerId', as: 'buyers' });
-Orders.belongsTo(Providers, { foreignKey: 'providerId', as: 'providers' });
+Orders.hasMany(Offers, { foreignKey: 'id', as: 'offers' });
+
+Orders.belongsTo(Cnpj, {
+  foreignKey: 'cnpjId', as: 'cnpj', onDelete: 'SET NULL', onUpdate: 'CASCADE',
+});
+Orders.belongsTo(Users, {
+  foreignKey: 'userId', as: 'users', onDelete: 'SET NULL', onUpdate: 'CASCADE',
+});
+Orders.belongsTo(Buyers, {
+  foreignKey: 'buyerId', as: 'buyers', onDelete: 'SET NULL', onUpdate: 'CASCADE',
+});
+Orders.belongsTo(Providers, {
+  foreignKey: 'providerId', as: 'providers', onDelete: 'SET NULL', onUpdate: 'CASCADE',
+});

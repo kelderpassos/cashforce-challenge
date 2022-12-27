@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { DataTypes, Model } from 'sequelize';
 import connection from '../connection';
 import Orders from './Orders';
@@ -82,5 +83,9 @@ Offers.init({
   charset: 'latin1',
 });
 
-Offers.belongsTo(Orders, { foreignKey: 'orderId', as: 'orders' });
-Offers.belongsTo(Sponsors, { foreignKey: 'sponsorId', as: 'sponsors' });
+Offers.belongsTo(Orders, {
+  foreignKey: 'orderId', as: 'orders', onDelete: 'SET NULL', onUpdate: 'CASCADE',
+});
+Offers.belongsTo(Sponsors, {
+  foreignKey: 'sponsorId', as: 'sponsors', onDelete: 'SET NULL', onUpdate: 'CASCADE',
+});

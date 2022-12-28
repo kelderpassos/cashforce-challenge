@@ -2,9 +2,9 @@ import Buyers from '../../database/models/Buyers';
 import Cnpj from '../../database/models/Cnpj';
 import Orders from '../../database/models/Orders';
 import Providers from '../../database/models/Providers';
-import Invoice from './Model';
+import Model from './Model';
 
-export default class InvoiceModel extends Invoice<Orders> {
+export default class InvoiceModel extends Model<Orders> {
   protected _attributes = ['orderNumber', 'value', 'emissionDate', 'orderStatusBuyer'];
   protected _associations = [
     { model: Buyers, as: 'buyers', attributes: ['name'] },

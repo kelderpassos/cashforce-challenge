@@ -16,7 +16,7 @@ export default class InvoiceModel extends Model<Orders> {
     super(Orders);
   }
 
-  findAll = async (userId: string): Promise<Orders[]> => this._model.findAll({
+  public findAll = async (userId: string): Promise<Orders[]> => this._model.findAll({
     where: { userId },
     attributes: this._attributes,
     include: this._associations,

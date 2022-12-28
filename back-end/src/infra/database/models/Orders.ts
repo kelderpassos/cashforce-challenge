@@ -3,7 +3,6 @@ import { DataTypes, Model } from 'sequelize';
 import connection from '../connection';
 import Buyers from './Buyers';
 import Cnpj from './Cnpj';
-import Offers from './Offers';
 import Providers from './Providers';
 import Users from './Users';
 
@@ -135,8 +134,6 @@ Orders.init({
   tableName: 'orders',
   charset: 'latin1',
 });
-
-Orders.hasMany(Offers, { foreignKey: 'id', as: 'offers' });
 
 Orders.belongsTo(Cnpj, {
   foreignKey: 'cnpjId', as: 'cnpj', onDelete: 'SET NULL', onUpdate: 'CASCADE',

@@ -1,10 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { DataTypes, Model } from 'sequelize';
 import connection from '../connection';
-import Buyers from './Buyers';
-import Orders from './Orders';
-import Providers from './Providers';
-import Sponsors from './Sponsors';
 
 export default class Cnpj extends Model {
   id!: number;
@@ -44,8 +40,3 @@ Cnpj.init({
   tableName: 'cnpjs',
   charset: 'latin1',
 });
-
-Cnpj.hasMany(Buyers, { foreignKey: 'id', as: 'buyers' });
-Cnpj.hasMany(Orders, { foreignKey: 'id', as: 'orders' });
-Cnpj.hasMany(Providers, { foreignKey: 'id', as: 'providers' });
-Cnpj.hasMany(Sponsors, { foreignKey: 'id', as: 'sponsors' });

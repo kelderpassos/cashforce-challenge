@@ -1,8 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { DataTypes, Model } from 'sequelize';
 import connection from '../connection';
-import Orders from './Orders';
-import Sponsors from './Sponsors';
 
 export default class Offers extends Model {
   id!: number;
@@ -81,11 +79,4 @@ Offers.init({
   underscored: false,
   tableName: 'offers',
   charset: 'latin1',
-});
-
-Offers.belongsTo(Orders, {
-  foreignKey: 'orderId', as: 'orders', onDelete: 'SET NULL', onUpdate: 'CASCADE',
-});
-Offers.belongsTo(Sponsors, {
-  foreignKey: 'sponsorId', as: 'sponsors', onDelete: 'SET NULL', onUpdate: 'CASCADE',
 });

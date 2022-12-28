@@ -2,7 +2,6 @@
 import { DataTypes, Model } from 'sequelize';
 import connection from '../connection';
 import Cnpj from './Cnpj';
-import Orders from './Orders';
 
 export default class Buyers extends Model {
   id!: number;
@@ -142,8 +141,6 @@ Buyers.init({
   tableName: 'buyers',
   charset: 'latin1',
 });
-
-Buyers.hasMany(Orders, { foreignKey: 'id', as: 'orders' });
 
 Buyers.belongsTo(Cnpj, {
   foreignKey: 'cnpjId', as: 'cnpj', onDelete: 'SET NULL', onUpdate: 'CASCADE',

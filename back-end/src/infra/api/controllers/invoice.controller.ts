@@ -8,8 +8,6 @@ export default class InvoiceController {
   findAll = async (req: Request, res: Response): Promise<Response> => {
     const { id } = req.params;
 
-    if (!id) throw new RequestError(404, 'Invalid id');
-
     const allInvoices = await this._model.findAll(id);
 
     if (!allInvoices) throw new RequestError(404, 'Any invoices found');

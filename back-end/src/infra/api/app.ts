@@ -16,7 +16,7 @@ export default class App {
   private config = async (): Promise<void> => {
     this.app.use(express.json());
     this.app.use(cors());
-    this.app.use('/usuario/nF/', invoiceRouter);
+    this.app.use('/invoices', invoiceRouter);
     this.app.use(errorHandler);
   };
 

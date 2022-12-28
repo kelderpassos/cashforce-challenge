@@ -1,6 +1,6 @@
 import App from './app';
 import 'dotenv/config';
 
-const { DB_PORT } = process.env;
+const { API_PORT } = process.env;
 
-new App().start(DB_PORT || Number(DB_PORT));
+new App().start(API_PORT || Number(API_PORT));

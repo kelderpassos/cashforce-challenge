@@ -8,12 +8,39 @@ import { RouterView } from "vue-router";
 
 <style scoped>
 * {
-  box-sizing: border-box;
   font-family: "DM Sans", sans-serif;
-  padding: 0;
-  margin: 0;
 }
 
-@media (min-width: 1024px) {
+/* html,
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+} */
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* *,
+*:before,
+*:after {
+  box-sizing: inherit;
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 </style>

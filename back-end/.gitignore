@@ -2,7 +2,9 @@
 /dist
 /build
 /coverage
+/.nyc_output
 /.pnp
 .pnp.js
 .env
+
 

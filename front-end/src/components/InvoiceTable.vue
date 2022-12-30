@@ -12,13 +12,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr v-for="(invoice, i) in invoices" v-bind:key="i">
+          <td>{{ invoice.orderNumber }}</td>
+          <td>{{ invoice.buyers.name }}</td>
+          <td>{{ invoice.providers.name }}</td>
+          <td>{{ invoice.emissionDate }}</td>
+          <td>{{ invoice.value }}</td>
+          <td>{{ invoice.orderStatusBuyer }}</td>
         </tr>
       </tbody>
     </table>
@@ -26,11 +26,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref, onMounted, computed } from "vue";
+import { storeToRefs } from "pinia";
+import { useInvoiceStore } from "@/stores/invoices";
 
 export default defineComponent({
-  name: "InvoiceTable",
-  components: {},
+  setup() {
+    const store = useInvoiceStore();
+
+    onMounted(() => {
+      store.fetchInvoices();
+    });
+
+    const { invoices } = storeToRefs(store);
+
+    return { invoices };
+  },
 });
 </script>
 <style>

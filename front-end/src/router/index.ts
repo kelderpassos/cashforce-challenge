@@ -5,7 +5,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/invoice",
+      path: "",
+      redirect: "invoices",
+    },
+    {
+      path: "/invoices",
       name: "invoice",
       component: InvoiceView,
     },

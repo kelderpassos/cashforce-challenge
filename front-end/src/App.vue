@@ -6,41 +6,16 @@ import { RouterView } from "vue-router";
   <RouterView />
 </template>
 
-<style scoped>
+<style>
 * {
   font-family: "DM Sans", sans-serif;
-}
-
-/* html,
-body {
-  min-height: 100vh;
-  max-width: 100vw;
-} */
-
-html {
-  box-sizing: border-box;
-  font-size: 16px;
-}
-
-/* *,
-*:before,
-*:after {
-  box-sizing: inherit;
-} */
-
-body {
   margin: 0;
   padding: 0;
-  font-weight: normal;
+  box-sizing: border-box;
 }
 
 ol,
 ul {
   list-style: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
 </style>

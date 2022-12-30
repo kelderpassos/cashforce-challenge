@@ -16,9 +16,10 @@
           <td>{{ invoice.orderNumber }}</td>
           <td>{{ invoice.buyers.name }}</td>
           <td>{{ invoice.providers.name }}</td>
-          <td>{{ invoice.emissionDate }}</td>
+          <td>{{ convertDate(invoice.emissionDate) }}</td>
           <td>{{ invoice.value }}</td>
           <td>{{ invoice.orderStatusBuyer }}</td>
+          <td>Dados do cedente</td>
         </tr>
       </tbody>
     </table>
@@ -26,9 +27,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted, computed } from "vue";
+import { defineComponent, onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import { useInvoiceStore } from "@/stores/invoices";
+import { convertDate } from "@/helpers/convertDate";
 
 export default defineComponent({
   setup() {
@@ -41,6 +43,11 @@ export default defineComponent({
     const { invoices } = storeToRefs(store);
 
     return { invoices };
+  },
+  data() {
+    return {
+      convertDate,
+    };
   },
 });
 </script>

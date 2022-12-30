@@ -43,9 +43,9 @@ export default defineComponent({
 
 .sidebarContainer {
   display: flex;
-  /* border: solid red 1px; */
   flex-direction: column;
   justify-content: start;
+
   background-color: #fbfdfe;
 
   height: 100vh;

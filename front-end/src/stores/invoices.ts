@@ -1,9 +1,10 @@
 import { defineStore } from "pinia";
 import axios from "axios";
+import type { Invoice } from "@/interfaces/invoice.interface";
 
 export const useInvoiceStore = defineStore("invoice", {
   state: () => ({
-    invoices: [],
+    invoices: [] as Invoice[],
   }),
   actions: {
     async fetchInvoices() {

@@ -1,6 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { DataTypes, Model } from 'sequelize';
-import connection from '../connection';
+import connection from '../connection/connection';
 
 export default class Cnpj extends Model {
   id!: number;

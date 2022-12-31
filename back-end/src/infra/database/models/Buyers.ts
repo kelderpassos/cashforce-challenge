@@ -1,7 +1,7 @@
 /* eslint-disable import/no-cycle */
 import { DataTypes, Model } from 'sequelize';
-import connection from '../connection';
-import Cnpj from './Cnpj';
+import connection from '../connection/connection';
+import Cnpj from './Cnpjs';
 
 export default class Buyers extends Model {
   id!: number;

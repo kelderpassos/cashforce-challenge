@@ -7,7 +7,7 @@ const config: Options = {
   password: process.env.DB_PASSWORD,
   host: process.env.DB_HOST,
   port: Number(process.env.DB_PORT),
-  dialect: 'mariadb',
+  dialect: 'mysql',
 };
 
-export default config;
+export = config;

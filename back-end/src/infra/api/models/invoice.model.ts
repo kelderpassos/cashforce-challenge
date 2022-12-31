@@ -1,5 +1,5 @@
 import Buyers from '../../database/models/Buyers';
-import Cnpj from '../../database/models/Cnpj';
+import Cnpj from '../../database/models/Cnpjs';
 import Orders from '../../database/models/Orders';
 import Providers from '../../database/models/Providers';
 import Model from './Model';

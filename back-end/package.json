@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "db:reset": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all",
     "dev": "nodemon src/infra/api/server.ts",
     "test:dev": "mocha -r ts-node/register src/tests/**/*.spec.ts --exit -t 60000",
     "test:coverage": "nyc npm run test:dev"

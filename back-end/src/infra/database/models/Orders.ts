@@ -1,8 +1,8 @@
 /* eslint-disable import/no-cycle */
 import { DataTypes, Model } from 'sequelize';
-import connection from '../connection';
+import connection from '../connection/connection';
 import Buyers from './Buyers';
-import Cnpj from './Cnpj';
+import Cnpj from './Cnpjs';
 import Providers from './Providers';
 import Users from './Users';
 

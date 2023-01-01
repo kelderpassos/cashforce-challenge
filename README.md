@@ -28,6 +28,12 @@ npm run db:build
  ```
 Now you can access the application through the link and see the api's return on the screen.
 
+## Uninstalling
+To remove the containers and the database run:
+```
+npm run compose:down
+```
+
 </details>
 
 
@@ -61,7 +67,7 @@ npm run db:build
  ```
 Acesse então a aplicação pela endereço http://localhost:3000/ e veja o retorno da api renderizado na tela.
 
-## Desinstalando
+## Desinstalação
 Para remover os containers e o banco de dados rode:
 ```
 npm run compose:down
